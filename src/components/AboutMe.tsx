@@ -6,7 +6,6 @@ export const AboutMe = () => {
   const { width } = useWindowSize();
   return (
     <Flex 
-      w={width} maxWidth="1270px" 
       justifyContent="space-between"
       alignItems="center"
       direction={width > 768 ? "row" : "column"}
