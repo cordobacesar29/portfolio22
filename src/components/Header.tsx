@@ -1,19 +1,16 @@
-import { useRef } from "react";
+
 import {
   Button, 
   Drawer, 
   DrawerBody, 
   DrawerCloseButton, 
   DrawerContent, 
-  DrawerFooter, 
   DrawerHeader, 
   DrawerOverlay, 
   Flex, 
   Heading, 
-  Input, 
   useDisclosure,
   IconButton,
-  Text
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useWindowSize } from "../hooks/useWindowSize";
@@ -24,8 +21,16 @@ export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     width > 768 ? (
-    <Flex>
+    <Flex justify={"space-between"}>
       <Heading m="1rem">César Córdoba</Heading>
+      <Flex m="1rem">
+        <Link to="/">
+          <Button mx={"1rem"}>Home</Button>
+        </Link>
+        <Link to="/services">
+          <Button mx={"1rem"}>Services</Button>
+        </Link>
+      </Flex>
     </Flex>
     ) : (
       <>
@@ -48,7 +53,6 @@ export const Header = () => {
             <DrawerCloseButton />
             <DrawerHeader borderBottom="1px solid aqua">César Córdoba</DrawerHeader>
             <DrawerBody>
-                <nav>
                   <Flex direction={"column"} align="center">
                     <Button 
                       w={"5rem"}
@@ -71,7 +75,6 @@ export const Header = () => {
                       <Link to="services">Services</Link>
                     </Button>
                   </Flex>
-                </nav>
             </DrawerBody>
           </DrawerContent>
         </Drawer>
