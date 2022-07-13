@@ -81,6 +81,7 @@ export const HowIWork = () => {
           </Flex>
         </Flex>
       </Flex>
+      <Heading mb="2rem" textAlign={"center"}>Ready to build your software?</Heading>
     </Flex>
   )
 }
